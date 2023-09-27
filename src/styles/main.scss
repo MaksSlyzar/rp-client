@@ -1,0 +1,86 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.gameDiv {
+    width: 100%;
+    height: 100%;
+}
+
+#BuildPanel {
+    display: flex;
+
+    .item {
+        width: 64px;
+        height: 64px;
+        border: solid 5px silver;
+        margin: 10px;
+        background: rgb(66, 66, 66);
+        border-radius: 50px;
+    }
+}
+
+#GUI {
+    // z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+ 
+    .window {
+        display: none;
+        padding: 20px;
+        position: absolute;
+        background: rgba(39, 39, 39, 0.438);
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: silver 4px solid;
+    }
+
+    .window-m {
+        width: 200px;
+        height: 100px;
+    }
+
+    button {
+        width: 80px;
+        height: 30px;
+        margin: 6px;
+    }
+
+    .button-red {
+        background-color: red;
+    }
+
+    .plus-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        font-weight: 800;
+        background: rgb(32, 32, 32);
+        border: 0;
+        color: white;
+        border-bottom: rgb(124, 124, 124) 2px solid;
+        transition: 0.2s;
+    }
+
+    .minus-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        font-weight: 800;
+        background: rgb(32, 32, 32);
+        border: 0;
+        color: white;
+        border-bottom: rgb(124, 124, 124) 2px solid;
+        transition: 0.2s;
+    }
+
+    .minus-icon:hover, .plus-icon:hover {
+        border-bottom: rgb(52, 224, 0) 2px solid;
+    }
+
+    .label-m {
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        padding: 6px;
+    }
+}
