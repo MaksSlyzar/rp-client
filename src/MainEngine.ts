@@ -3,6 +3,7 @@ import AssetsManager from "./managers/AssetsManager";
 import CanvasManager from "./managers/CanvasManager";
 import GameObjectsManager from "./managers/GameObjectsManager";
 import SIOManager from "./managers/SIOManager";
+import GUIManager from "./GUI/GUIManager";
 
 import "./styles/main.scss";
 
@@ -10,6 +11,7 @@ class MainEngine {
     camera: Camera;
 
     constructor () {
+        GUIManager.load();
         AssetsManager.loadImages();
         this.update();
         SIOManager.connect({
@@ -48,7 +50,9 @@ class MainEngine {
         CanvasManager.ctx.clearRect(0, 0, CanvasManager.canvas.width, CanvasManager.canvas.height);
         GameObjectsManager.draw();
 
-        setTimeout(() => this.update(), 10);
+        // setTimeout(() => this.update(), 10);
+
+        requestAnimationFrame(() => this.update());
     }
 }
 
