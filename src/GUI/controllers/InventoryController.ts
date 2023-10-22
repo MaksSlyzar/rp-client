@@ -1,3 +1,5 @@
+import CanvasManager from "../../managers/CanvasManager";
+
 const sotaPng = require("../../assets/sota-empty.png").default;
 const goldenOre = require("../../assets/golden_ore.png").default;
 
@@ -35,6 +37,11 @@ class InventoryController {
         const showInventoryButton = document.getElementById("showInventoryButton") as HTMLButtonElement;
 
         showInventoryButton.onclick = this.showInventoryClick; 
+
+        CanvasManager.events.setOnKeyUp((keyCode: number) => {
+            if (keyCode == 73) //I
+                this.showInventoryClick();
+        });
     }
 
     showInventoryClick = () => {
