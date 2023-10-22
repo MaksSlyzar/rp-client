@@ -204,6 +204,11 @@ class MainPlayer extends GameObject {
         CanvasManager.ctx.drawImage(AssetsManager.sprites["char-3"].image, -16, -16);
         CanvasManager.ctx.restore();
 
+        //Draw id player 
+        const playerId = "ID: " + String(this.id);
+        CanvasManager.ctx.font = "16px Arial";
+        CanvasManager.ctx.fillText(playerId, drawPosition.x - playerId.length / 2 * 8, drawPosition.y - 25);
+
     }
 
     clearTurn () {
