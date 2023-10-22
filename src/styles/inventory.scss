@@ -8,7 +8,6 @@
     border: solid 4px black;
     border-radius: 10px;
     align-items: center;
-
 }
 
 .inventory-container {
@@ -47,4 +46,8 @@
     bottom: 5px;
     z-index: 1;
     right: 5px;
+}
+
+.hidden {
+    visibility: hidden;
 }

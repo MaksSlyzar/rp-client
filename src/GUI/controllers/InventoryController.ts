@@ -3,8 +3,11 @@ const goldenOre = require("../../assets/golden_ore.png").default;
 
 class InventoryController {
     slots: number = 80;
+    inventoryOpen: boolean = false;
+    inventoryElement: HTMLDivElement;
 
-    constructor () { 
+    constructor () {
+        this.inventoryElement = document.getElementsByClassName("inventory")[0] as HTMLDivElement;
         const inventoryContainer = document.getElementsByClassName("inventory-container")[0] as HTMLDivElement;
 
         for (let sotaIndex = 0; sotaIndex < this.slots; sotaIndex++) {
@@ -27,6 +30,20 @@ class InventoryController {
             sota.appendChild(span);
 
             inventoryContainer.appendChild(sota);
+        }
+
+        const showInventoryButton = document.getElementById("showInventoryButton") as HTMLButtonElement;
+
+        showInventoryButton.onclick = this.showInventoryClick; 
+    }
+
+    showInventoryClick = () => {
+        this.inventoryOpen = !this.inventoryOpen;
+
+        if (this.inventoryOpen) {
+            this.inventoryElement.className = "inventory";
+        } else {
+            this.inventoryElement.className = "inventory hidden"
         }
     }
 }
