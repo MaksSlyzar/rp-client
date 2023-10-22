@@ -12,7 +12,7 @@
 .inventory-container {
     width: 320px;
     height: 500px;
-    background-color: aqua;
+    background-color: rgb(29, 29, 29);
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
@@ -21,9 +21,28 @@
 
 .sota {
     display: block;
-    background-color: chocolate;
-    width: 75px;
-    height: 75px;
+    position: relative;
+    // background-color: chocolate;
+    width: 64px;
+    height: 64px;
     border: 1px solid black;
     box-sizing: border-box;
+    align-content: right;
+    justify-content: end;
+}
+
+.sota-img {
+    position: absolute;
+}
+
+.sota-count {
+    // display: 
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+
+    position: absolute;
+    bottom: 5px;
+    z-index: 1;
+    right: 5px;
 }
