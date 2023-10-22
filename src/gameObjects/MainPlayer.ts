@@ -201,7 +201,7 @@ class MainPlayer extends GameObject {
 
         CanvasManager.ctx.rotate(angleRadians);
         // CanvasManager.ctx.fillRect(-16, -16, 32, 32);
-        CanvasManager.ctx.drawImage(AssetsManager.sprites["char-2"].image, -32, -32);
+        CanvasManager.ctx.drawImage(AssetsManager.sprites["char-3"].image, -16, -16);
         CanvasManager.ctx.restore();
 
     }

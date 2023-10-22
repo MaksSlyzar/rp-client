@@ -72,7 +72,7 @@ class TreeWO extends GameObject {
     draw () {
         const ctx = CanvasManager.ctx;
 
-        const sprite = AssetsManager.sprites["tree-just"];
+        const sprite = AssetsManager.sprites["wo_tree"];
 
         if (!sprite)
             return;
@@ -113,7 +113,7 @@ class TreeWO extends GameObject {
             return;
             
         if (collisionResult) {
-            ctx.drawImage(sprite.image, drawPosition.x - 28, drawPosition.y - 28, 64, 64);
+            ctx.drawImage(sprite.image, drawPosition.x - 28, drawPosition.y - 28, 120, 120);
         } else {
             ctx.globalAlpha = 0.2;
             ctx.drawImage(sprite.image, drawPosition.x - 28, drawPosition.y - 28);
@@ -124,11 +124,13 @@ class TreeWO extends GameObject {
         if (!GameObjectsManager.showColliders)
             return;
         
-        ctx.beginPath();
-        ctx.strokeStyle = "darkgreen";
-        ctx.rect(drawPosition.x + this.clickCollider.x, drawPosition.y + this.clickCollider.y, this.clickCollider.width, this.clickCollider.height);
-        ctx.stroke();
-        ctx.closePath();
+
+        //COLLIDER 
+        // ctx.beginPath();
+        // ctx.strokeStyle = "darkgreen";
+        // ctx.rect(drawPosition.x + this.clickCollider.x, drawPosition.y + this.clickCollider.y, this.clickCollider.width, this.clickCollider.height);
+        // ctx.stroke();
+        // ctx.closePath();
     }
 
     getSelfCollisionObject () {

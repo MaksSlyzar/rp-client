@@ -71,8 +71,8 @@ class AssetsManager {
             name: "main-char"
         },
         {
-            src: "hero-2.png",
-            name: "char-2"
+            src: "hero-3.png",
+            name: "char-3"
         },
         {
             src: "tree-just.png",
