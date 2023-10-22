@@ -31,7 +31,7 @@ class SIOManager {
             network: "http://192.168.0.101:3000"
         };
 
-        this.socket = io(serverUrls.local);
+        this.socket = io(serverUrls.network);
 
         this.socket.on("connect", () => {
             this.register("Maks");

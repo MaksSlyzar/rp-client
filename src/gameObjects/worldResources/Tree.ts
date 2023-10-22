@@ -72,7 +72,7 @@ class TreeWO extends GameObject {
     draw () {
         const ctx = CanvasManager.ctx;
 
-        const sprite = AssetsManager.sprites["wo_tree"];
+        const sprite = AssetsManager.sprites["tree-just"];
 
         if (!sprite)
             return;
@@ -113,7 +113,7 @@ class TreeWO extends GameObject {
             return;
             
         if (collisionResult) {
-            ctx.drawImage(sprite.image, drawPosition.x - 28, drawPosition.y - 28);
+            ctx.drawImage(sprite.image, drawPosition.x - 28, drawPosition.y - 28, 64, 64);
         } else {
             ctx.globalAlpha = 0.2;
             ctx.drawImage(sprite.image, drawPosition.x - 28, drawPosition.y - 28);

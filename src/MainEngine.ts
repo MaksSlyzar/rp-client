@@ -4,6 +4,8 @@ import CanvasManager from "./managers/CanvasManager";
 import GameObjectsManager from "./managers/GameObjectsManager";
 import SIOManager from "./managers/SIOManager";
 
+import "./styles/main.scss";
+
 class MainEngine {
     camera: Camera;
 

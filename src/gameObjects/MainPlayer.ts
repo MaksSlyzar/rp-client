@@ -62,8 +62,8 @@ class MainPlayer extends GameObject {
     collider = { 
         x: 0, 
         y: 0, 
-        width: 32, 
-        height: 32
+        width: 64, 
+        height: 64
     };
 
     constructor () {
@@ -163,7 +163,7 @@ class MainPlayer extends GameObject {
     draw () {
         CanvasManager.ctx.fillStyle = "white";
         // console.log(this.posX, this.posY)
-        const drawPosition = GameObjectsManager.camera.doPosition(this.posX, this.posY, 32, 32);
+        const drawPosition = GameObjectsManager.camera.doPosition(this.posX, this.posY, 64, 64);
          
         // CanvasManager.ctx.translate(drawPosition.x + drawPosition.width / 2, drawPosition.y + drawPosition.height / 2);
     
@@ -201,7 +201,7 @@ class MainPlayer extends GameObject {
 
         CanvasManager.ctx.rotate(angleRadians);
         // CanvasManager.ctx.fillRect(-16, -16, 32, 32);
-        CanvasManager.ctx.drawImage(AssetsManager.sprites["char"].image, -16, -16);
+        CanvasManager.ctx.drawImage(AssetsManager.sprites["char-2"].image, -32, -32);
         CanvasManager.ctx.restore();
 
     }
