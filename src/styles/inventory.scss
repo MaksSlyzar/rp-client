@@ -2,13 +2,28 @@
     position: absolute;
     left: calc(100% - 400px);
     top: 10%;
-    width: 300px;
-    height: 500px;
+    width: 320px;
+    height: 520px;
     background-color: rgb(27, 27, 27);
     border: solid 4px black;
     border-radius: 10px;
 }
 
-.inventory-conteiner {
+.inventory-container {
+    width: 320px;
+    height: 500px;
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    overflow: auto;
+}
 
+.sota {
+    display: block;
+    background-color: chocolate;
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    box-sizing: border-box;
 }
