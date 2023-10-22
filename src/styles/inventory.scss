@@ -1,17 +1,19 @@
 .inventory {
     position: absolute;
-    left: calc(100% - 400px);
+    left: calc(100% - 450px);
     top: 10%;
-    width: 320px;
+    width: 344px;
     height: 520px;
     background-color: rgb(27, 27, 27);
     border: solid 4px black;
     border-radius: 10px;
+    align-items: center;
+
 }
 
 .inventory-container {
-    width: 320px;
-    height: 500px;
+    width: 344px;
+    height: 512px;
     background-color: rgb(29, 29, 29);
     display: flex;
     flex-wrap: wrap;

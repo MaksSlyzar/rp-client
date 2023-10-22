@@ -2,7 +2,7 @@ const sotaPng = require("../../assets/sota-empty.png").default;
 const goldenOre = require("../../assets/golden_ore.png").default;
 
 class InventoryController {
-    slots: number = 40;
+    slots: number = 80;
 
     constructor () { 
         const inventoryContainer = document.getElementsByClassName("inventory-container")[0] as HTMLDivElement;
