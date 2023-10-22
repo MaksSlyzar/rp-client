@@ -38,7 +38,11 @@ class InventoryController {
     }
 
     showInventoryClick = () => {
-        this.inventoryOpen = !this.inventoryOpen;
+        this.showInventory(!this.inventoryOpen);
+    }
+
+    showInventory (show: boolean) {
+        this.inventoryOpen = show;
 
         if (this.inventoryOpen) {
             this.inventoryElement.className = "inventory";
