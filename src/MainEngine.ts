@@ -9,6 +9,7 @@ import "./styles/main.scss";
 
 class MainEngine {
     camera: Camera;
+    fps: number = 0;
 
     constructor () {
         GUIManager.load();
@@ -25,6 +26,7 @@ class MainEngine {
 
         this.loadAbilities();
 
+        this.secondTimer();
     }
 
     loadAbilities () {
@@ -51,8 +53,14 @@ class MainEngine {
         GameObjectsManager.draw();
 
         // setTimeout(() => this.update(), 10);
-
+        this.fps += 1;
         requestAnimationFrame(() => this.update());
+    }
+
+    secondTimer () {
+        GUIManager.renderingInfo.changeFps(this.fps);
+        this.fps = 0;
+        setTimeout(() => this.secondTimer(), 1000);
     }
 }
 
