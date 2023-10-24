@@ -7,7 +7,7 @@ import Player from "../gameObjects/Player";
 import Marker from "../gameObjects/Marker";
 import TreeWO from "../gameObjects/worldResources/Tree";
 import MovePoint from "../gameObjects/MovePoint";
-import MainPlayer from "../gameObjects/MainPlayer";
+import MainPlayer from "../gameObjects/MainPlayer/MainPlayer";
 import Grid from "../gameObjects/Grid";
 import Unit from "../gameObjects/units/Unit";
 
@@ -58,7 +58,7 @@ class GameObjectsManager {
         // this.worldObjects.push(newTree);
     }
 
-    draw () {
+    draw (dt: number) {
         if (loaded.isLoaded() == false)
             return;
 
@@ -71,12 +71,12 @@ class GameObjectsManager {
 
 
         if (this.mainPlayer) {
-            this.mainPlayer.draw();
+            this.mainPlayer.draw(dt);
             this.mainPlayer.update(Date.now() - this.serverRequestTime);
         }
 
         this.worldObjects.map(wo => {
-            wo.draw();
+            wo.draw(dt);
         });
 
 

@@ -77,6 +77,10 @@ class AssetsManager {
         {
             src: "tree-just.png",
             name: "tree-just"
+        },
+        {
+            src: "player-test-sprites.png",
+            name: "player-test"
         }].map(spriteName => { return {...spriteName, loaded: false }});
 
         spriteNames.forEach(sprite => {

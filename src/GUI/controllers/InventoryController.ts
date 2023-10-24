@@ -44,6 +44,10 @@ class InventoryController {
         });
     }
 
+    refresh () {
+        
+    }
+
     showInventoryClick = () => {
         this.showInventory(!this.inventoryOpen);
     }

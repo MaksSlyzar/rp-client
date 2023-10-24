@@ -6,7 +6,7 @@ import loaded from "../loaded";
 import GameObject from '../gameObjects/GameObject';
 import TreeWO from '../gameObjects/worldResources/Tree';
 import GoldenOreWO from '../gameObjects/worldResources/GoldenOre';
-import MainPlayer from '../gameObjects/MainPlayer';
+import MainPlayer from '../gameObjects/MainPlayer/MainPlayer';
 import Unit from '../gameObjects/units/Unit';
 
 

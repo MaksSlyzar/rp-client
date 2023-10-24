@@ -10,6 +10,7 @@ import "./styles/main.scss";
 class MainEngine {
     camera: Camera;
     fps: number = 0;
+    dt: number = 60;
 
     constructor () {
         GUIManager.load();
@@ -21,7 +22,7 @@ class MainEngine {
             }
         });
 
-        GameObjectsManager.draw();
+        GameObjectsManager.draw(this.dt);
         CanvasManager.clear();
 
         this.loadAbilities();
@@ -50,7 +51,7 @@ class MainEngine {
 
     update () {
         CanvasManager.ctx.clearRect(0, 0, CanvasManager.canvas.width, CanvasManager.canvas.height);
-        GameObjectsManager.draw();
+        GameObjectsManager.draw(this.dt);
 
         // setTimeout(() => this.update(), 10);
         this.fps += 1;

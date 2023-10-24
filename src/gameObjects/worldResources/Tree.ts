@@ -4,7 +4,7 @@ import GameObjectsManager from "../../managers/GameObjectsManager";
 import SIOManager from "../../managers/SIOManager";
 import CheckCollision from "../../modules/Collider/CheckCollision";
 import GameObject from "../GameObject";
-import { DoItemEvent } from "../MainPlayer";
+import { DoItemEvent } from "../MainPlayer/MainPlayer";
 
 class TreeWO extends GameObject {
     id: number;
@@ -28,28 +28,6 @@ class TreeWO extends GameObject {
 
     selfOnClick(): void {
         GameObjectsManager.mainPlayer.doTurn = [];
-
-        // GameObjectsManager.mainPlayer.doTurn.push({ 
-        //     x: this.posX,
-        //     y: this.posY,
-        //     name: "move",
-        //     anydata: this.id,
-        //     onSuccess: () => {
-        //         GameObjectsManager.mainPlayer.doTurn.push({
-        //             x: this.posX,
-        //             y: this.posY, 
-        //             name: "GetResource",
-        //             anydata: this.id,
-        //             onSuccess: () => {
-        //                 console.log("Get Tree...");
-        //             },
-        //             onFail: () => {
-        //                 console.log("Loose...");
-        //             }
-        //         });
-        //     },
-        //     onFail: () => {}
-        // });
 
         const newDoItem = new DoItemEvent();
 
@@ -103,13 +81,13 @@ class TreeWO extends GameObject {
 
         // console.log(this.posX)
         //Optimization
-        if (drawPosition.x + drawPosition.width < 0)
+        if (drawPosition.x - 28 + drawPosition.width < 0)
             return;
-        if (drawPosition.x > CanvasManager.canvas.width)
+        if (drawPosition.x - 28 > CanvasManager.canvas.width)
             return;
-        if (drawPosition.y + drawPosition.height < 0)
+        if (drawPosition.y -28 + drawPosition.height < 0)
             return;
-        if (drawPosition.y > CanvasManager.canvas.height)
+        if (drawPosition.y - 28 > CanvasManager.canvas.height)
             return;
             
         if (collisionResult) {

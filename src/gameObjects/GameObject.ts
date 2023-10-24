@@ -28,7 +28,7 @@ class GameObject {
         
     }
 
-    draw () {};
+    draw (dt: number) {};
     selfOnClick () {};
     selfOnRightClick () {};
 

@@ -2,7 +2,7 @@ import MainEngine from "../MainEngine";
 import CanvasManager from "../managers/CanvasManager";
 import GameObjectsManager from "../managers/GameObjectsManager";
 import SIOManager from "../managers/SIOManager";
-import { DoItemEvent, MoveToGameObjectEvent } from "./MainPlayer";
+import { DoItemEvent, MoveToGameObjectEvent } from "./MainPlayer/MainPlayer";
 
 class Camera {
     posX: number = -500;
@@ -80,10 +80,9 @@ class Camera {
     }
 
     update () {
-        // this.posX += (GameObjectsManager.mainPlayer.posX - CanvasManager.canvas.width / 2 - 16 - this.posX) * 0.05;
-        // this.posY += (GameObjectsManager.mainPlayer.posY - CanvasManager.canvas.height / 2 - 16 - this.posY) * 0.05;
-        this.posX = GameObjectsManager.mainPlayer.posX - CanvasManager.canvas.width / 2 - 16;
-        this.posY = GameObjectsManager.mainPlayer.posY - CanvasManager.canvas.height / 2 - 16;
+        this.posX += (GameObjectsManager.mainPlayer.posX - CanvasManager.canvas.width / 2 - 16 - this.posX) * 0.15;
+        this.posY += (GameObjectsManager.mainPlayer.posY - CanvasManager.canvas.height / 2 - 16 - this.posY) * 0.15;
+        // this.posX += (GameObjectsManager.mainPlayer.posX - CanvasManager.canvas.width / 2 - 16) * 0.15;/
         // if (CanvasManager.keyDown("q")) {
         //     this.defaultSize -= 0.01;
         // }

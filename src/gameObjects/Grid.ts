@@ -115,12 +115,12 @@ class Grid extends GameObject {
         //     }
         // }
 
-        const browseWidth = Math.round(CanvasManager.canvas.width / 16);
-        const browseHeight = Math.round(CanvasManager.canvas.height / 16);
-        const browseX = Math.floor(GameObjectsManager.camera.posX / 16);
-        const browseY = Math.floor(GameObjectsManager.camera.posY / 16);
+        const browseWidth = Math.round(CanvasManager.canvas.width / 32);
+        const browseHeight = Math.round(CanvasManager.canvas.height / 32);
+        const browseX = Math.floor(GameObjectsManager.camera.posX / 32);
+        const browseY = Math.floor(GameObjectsManager.camera.posY / 32);
 
-        for (let y = browseY; y < browseHeight + browseY + 1; y++) {
+        for (let y = browseY; y < browseHeight + browseY + 2; y++) {
             for (let x = browseX; x < browseWidth + browseX + 1; x++) {
                 if (y < 0)
                     continue;
@@ -129,9 +129,9 @@ class Grid extends GameObject {
 
                 const drawImagePosition = this.landMap[y][x];
                 
-                const drawPosition = GameObjectsManager.camera.doPosition(x * 16, y * 16, 16, 16);
+                const drawPosition = GameObjectsManager.camera.doPosition(x * 32, y * 32, 32, 32);
 
-                ctx.drawImage(AssetsManager.sprites["grass-sheet"].image, drawImagePosition * 16, 0, 16, 16, Math.floor(drawPosition.x), Math.floor(drawPosition.y), 16, 16);
+                ctx.drawImage(AssetsManager.sprites["grass-sheet"].image, drawImagePosition * 32, 0, 32, 32, Math.floor(drawPosition.x), Math.floor(drawPosition.y), 32, 32);
             }
         }
 
