@@ -3,7 +3,7 @@ import GameObject from "../gameObjects/GameObject";
 import CanvasView from "./CanvasManager";
 import CanvasManager from "./CanvasManager";
 import loaded from "../loaded";
-import Player from "../gameObjects/Player";
+import Player from "../gameObjects/Player/Player";
 import Marker from "../gameObjects/Marker";
 import TreeWO from "../gameObjects/worldResources/Tree";
 import MovePoint from "../gameObjects/MovePoint";
@@ -66,7 +66,7 @@ class GameObjectsManager {
 
         this.players.map(player => {
             player.update(Date.now() - this.serverRequestTime);
-            player.draw();
+            player.draw(dt);
         });
 
 

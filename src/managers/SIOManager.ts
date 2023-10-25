@@ -1,5 +1,5 @@
 import { io, Socket } from 'socket.io-client'
-import Player from '../gameObjects/Player';
+import Player from '../gameObjects/Player/Player';
 import CanvasManager from './CanvasManager';
 import GameObjectsManager from './GameObjectsManager';
 import loaded from "../loaded";
@@ -8,6 +8,7 @@ import TreeWO from '../gameObjects/worldResources/Tree';
 import GoldenOreWO from '../gameObjects/worldResources/GoldenOre';
 import MainPlayer from '../gameObjects/MainPlayer/MainPlayer';
 import Unit from '../gameObjects/units/Unit';
+import BlueCrystalWO from '../gameObjects/worldResources/BlueCrystal';
 
 
 interface events {
@@ -28,7 +29,7 @@ class SIOManager {
             replit: "https://testrpg.zanpy.repl.co",
             render: "https://zom-backend.onrender.com/",
             local: "http://localhost:3000",
-            network: "http://192.168.0.101:3000"
+            network: "http://192.168.0.101:3030"
         };
 
         this.socket = io(serverUrls.network);
@@ -96,9 +97,7 @@ class SIOManager {
                 GameObjectsManager.players.map(player => {
                     if (updatePlayer.id == player.id) {
                         createPlayer = false;
-                        player.targetX = updatePlayer.posX;
-                        player.targetY = updatePlayer.posY;
-                        player.rotation = updatePlayer.rotation;
+                        player.networkData(updatePlayer);
                     }
                 });
 
@@ -136,6 +135,10 @@ class SIOManager {
 
                         case "GoldenOre":
                             newObject = new GoldenOreWO(updateWO.id);
+                        break;
+
+                        case "BlueCrystal":
+                            newObject = new BlueCrystalWO(updateWO.id);
                         break;
 
                         default:

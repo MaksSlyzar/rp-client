@@ -1,3 +1,5 @@
+import AssetsManager from "../../managers/AssetsManager";
+import CanvasManager from "../../managers/CanvasManager";
 import Point2D from "../../modules/Point2D";
 
 export interface AnimationData {
@@ -15,8 +17,7 @@ export interface PlayAnimation {
 
 export interface PlayAnimationTile { speed: number, x: number, y: number };
 
-export class AnimationComponent<GameObjectType> {
-    gameObject: GameObjectType;
+export class AnimationComponent {
 
     animationsData: AnimationData;
     playAnimation: PlayAnimation;
@@ -33,9 +34,12 @@ export class AnimationComponent<GameObjectType> {
         height: number
     };
 
-    constructor (gameObject: GameObjectType) { 
-        this.gameObject = gameObject;
+    constructor () {
         this.drawPosition = new Point2D(0, 0);
+        this.drawSize = {
+            width: 64,
+            height: 64
+        };
     }
 
     linkAnimation (data: any) {
@@ -68,10 +72,24 @@ export class AnimationComponent<GameObjectType> {
 
         this.playAnimationTileIndex = 0;
         this.playAnimationTile = this.playAnimation.tiles[this.playAnimationTileIndex];
+        // console.log("YES")
     }
 
     draw (dt: number) {
+        const currentTime = Date.now();
+        this.renderTimes += dt;
 
+        if (this.playAnimation == undefined)
+            return;
+
+        const image = AssetsManager.sprites[this.playAnimation.assetName].image;
+
+        CanvasManager.ctx.drawImage(image, this.playAnimationTile.x, this.playAnimationTile.y, this.playAnimation.tileWidth, this.playAnimation.tileHeight, this.drawPosition.x, this.drawPosition.y, this.playAnimation.tileWidth, this.playAnimation.tileHeight);
+
+        if ((currentTime - this.lastFrameTime) > this.playAnimationTile.speed) {
+            this.nextTile();
+            this.lastFrameTime = currentTime;
+        }
     }
 
     update () {

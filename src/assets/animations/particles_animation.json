@@ -1,0 +1,14 @@
+{
+    "WHITE_PARTICLES": {
+        "assetName": "white-particles",
+        "tileWidth": 32,
+        "tileHeight": 41,
+        "tiles": [
+            { "speed": 200, "y": 0, "x": 0 },
+            { "speed": 200, "y": 41, "x": 0 },
+            { "speed": 200, "y": 82, "x": 0 },
+            { "speed": 200, "y": 123, "x": 0 },
+            { "speed": 200, "y": 164, "x": 0 }
+        ]
+    }
+}

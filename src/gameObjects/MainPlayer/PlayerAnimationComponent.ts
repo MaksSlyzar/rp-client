@@ -7,28 +7,33 @@ import CanvasManager from "../../managers/CanvasManager";
 import AssetsManager from "../../managers/AssetsManager";
 
 
-class PlayerAnimationComponent extends AnimationComponent<MainPlayer> {
-    constructor (playerObject: MainPlayer) {
-        super(playerObject);
+class PlayerAnimationComponent {
+    moveAnimationComponent: AnimationComponent;
+    gameObject: MainPlayer;
 
-        this.linkAnimation(player_animation);
+    constructor (playerObject: MainPlayer) {
+        this.gameObject = playerObject;
+
+        this.moveAnimationComponent = new AnimationComponent();
+        this.moveAnimationComponent.linkAnimation(player_animation);
     }
 
     draw (dt: number) {
-        const currentTime = Date.now();
-        this.renderTimes += dt;
+        this.moveAnimationComponent.draw(dt);
+    }
 
-        if (this.playAnimation == undefined)
-            return;
+    setAnimation(name: string) {
+        this.moveAnimationComponent.setAnimation(name);
+    }
 
-        const image = AssetsManager.sprites[this.playAnimation.assetName].image;
+    setDrawSize (width: number, height: number) {
+        this.moveAnimationComponent.drawSize.width = width;
+        this.moveAnimationComponent.drawSize.height = height;
+    }
 
-        CanvasManager.ctx.drawImage(image, this.playAnimationTile.x, this.playAnimationTile.y, this.playAnimation.tileWidth, this.playAnimation.tileHeight, this.drawPosition.x, this.drawPosition.y, this.playAnimation.tileWidth, this.playAnimation.tileHeight);
-
-        if ((currentTime - this.lastFrameTime) > this.playAnimationTile.speed) {
-            this.nextTile();
-            this.lastFrameTime = currentTime;
-        }
+    setDrawPosition (x: number, y: number) {
+        this.moveAnimationComponent.drawPosition.x = x;
+        this.moveAnimationComponent.drawPosition.y = y;
     }
 
     update(): void {

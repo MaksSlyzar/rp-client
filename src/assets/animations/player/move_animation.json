@@ -38,6 +38,19 @@
             { "speed": 200, "x": 128, "y": 320 }
         ]
     },
+    "MOVE_RIGHT": {
+        "assetName": "player-test",
+        "tileWidth": 64,
+        "tileHeight": 64,
+        "tiles": [
+            { "speed": 200, "x": 128, "y": 0 },
+            { "speed": 200, "x": 128, "y": 64 },
+            { "speed": 200, "x": 128, "y": 128 },
+            { "speed": 200, "x": 128, "y": 192 },
+            { "speed": 200, "x": 128, "y": 256 },
+            { "speed": 200, "x": 128, "y": 320 }
+        ]
+    },
     "MOVE_LEFT": {
         "assetName": "player-test",
         "tileWidth": 64,
@@ -50,5 +63,37 @@
             { "speed": 200, "x": 192, "y": 256 },
             { "speed": 200, "x": 192, "y": 320 }
         ]
+    },
+    "MOVE_LEFT-UP": {
+        "assetName": "player-test",
+        "tileWidth": 64,
+        "tileHeight": 64,
+        "tiles": [
+            { "speed": 200, "x": 256, "y": 0 }
+        ]
+    },
+    "STAY_LEFT": {
+        "assetName": "player-test",
+        "tileWidth": 64,
+        "tileHeight": 64,
+        "tiles": [{ "speed": 100, "x": 192, "y": 0 }]
+    },
+    "STAY_RIGHT": {
+        "assetName": "player-test",
+        "tileWidth": 64,
+        "tileHeight": 64,
+        "tiles": [{ "speed": 100, "x": 128, "y": 0 }]
+    },
+    "STAY_UP": {
+        "assetName": "player-test",
+        "tileWidth": 64,
+        "tileHeight": 64,
+        "tiles": [{ "speed": 100, "x": 64, "y": 0 }]
+    },
+    "STAY_DOWN": {
+        "assetName": "player-test",
+        "tileWidth": 64,
+        "tileHeight": 64,
+        "tiles": [{ "speed": 100, "x": 0, "y": 0 }]
     }
 }

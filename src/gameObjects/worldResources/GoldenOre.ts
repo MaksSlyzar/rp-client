@@ -52,11 +52,11 @@ class GoldenOreWO extends GameObject {
         if (!GameObjectsManager.showColliders)
             return;
         
-        ctx.beginPath();
-        ctx.strokeStyle = "darkgreen";
-        ctx.rect(drawPosition.x + this.clickCollider.x, drawPosition.y + this.clickCollider.y, this.clickCollider.width, this.clickCollider.height);
-        ctx.stroke();
-        ctx.closePath();
+        // ctx.beginPath();
+        // ctx.strokeStyle = "darkgreen";
+        // ctx.rect(drawPosition.x + this.clickCollider.x, drawPosition.y + this.clickCollider.y, this.clickCollider.width, this.clickCollider.height);
+        // ctx.stroke();
+        // ctx.closePath();
     }
     
     selfOnClick(): void {
