@@ -83,7 +83,6 @@ export class AnimationComponent {
             return;
 
         const image = AssetsManager.sprites[this.playAnimation.assetName].image;
-
         CanvasManager.ctx.drawImage(image, this.playAnimationTile.x, this.playAnimationTile.y, this.playAnimation.tileWidth, this.playAnimation.tileHeight, this.drawPosition.x, this.drawPosition.y, this.playAnimation.tileWidth, this.playAnimation.tileHeight);
 
         if ((currentTime - this.lastFrameTime) > this.playAnimationTile.speed) {

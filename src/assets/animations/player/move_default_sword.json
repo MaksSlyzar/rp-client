@@ -1,0 +1,74 @@
+{
+    "MOVE_DOWN": {
+        "assetName": "player-test",
+        "tileWidth": 96,
+        "tileHeight": 96,
+        "tiles": [
+            { "speed": 200, "x": 388, "y": 0 },
+            { "speed": 200, "x": 388, "y": 96 },
+            { "speed": 200, "x": 388, "y": 192 },
+            { "speed": 200, "x": 388, "y": 288 },
+            { "speed": 200, "x": 388, "y": 384 }
+        ]
+    },
+    "MOVE_UP": {
+        "assetName": "player-test",
+        "tileWidth": 96,
+        "tileHeight": 96,
+        "tiles": [
+            { "speed": 200, "x": 484, "y": 0 },
+            { "speed": 200, "x": 484, "y": 96 },
+            { "speed": 200, "x": 484, "y": 192 },
+            { "speed": 200, "x": 484, "y": 288 },
+            { "speed": 200, "x": 484, "y": 384 }
+        ]
+    },
+    "MOVE_RIGHT": {
+        "assetName": "player-test",
+        "tileWidth": 96,
+        "tileHeight": 96,
+        "tiles": [
+            { "speed": 200, "x": 580, "y": 0 },
+            { "speed": 200, "x": 580, "y": 96 },
+            { "speed": 200, "x": 580, "y": 192 },
+            { "speed": 200, "x": 580, "y": 288 },
+            { "speed": 200, "x": 580, "y": 384 }
+        ]
+    },
+    "MOVE_LEFT": {
+        "assetName": "player-test",
+        "tileWidth": 96,
+        "tileHeight": 96,
+        "tiles": [
+            { "speed": 200, "x": 676, "y": 0 },
+            { "speed": 200, "x": 676, "y": 96 },
+            { "speed": 200, "x": 676, "y": 192 },
+            { "speed": 200, "x": 676, "y": 288 },
+            { "speed": 200, "x": 676, "y": 384 }
+        ]
+    },
+    "STAY_LEFT": {
+        "assetName": "player-test",
+        "tileWidth": 96,
+        "tileHeight": 96,
+        "tiles": [{ "speed": 100, "x": 676, "y": 0 }]
+    },
+    "STAY_RIGHT": {
+        "assetName": "player-test",
+        "tileWidth": 96,
+        "tileHeight": 96,
+        "tiles": [{ "speed": 100, "x": 580, "y": 0 }]
+    },
+    "STAY_UP": {
+        "assetName": "player-test",
+        "tileWidth": 96,
+        "tileHeight": 96,
+        "tiles": [{ "speed": 100, "x": 484, "y": 0 }]
+    },
+    "STAY_DOWN": {
+        "assetName": "player-test",
+        "tileWidth": 96,
+        "tileHeight": 96,
+        "tiles": [{ "speed": 100, "x": 388, "y": 0 }]
+    }
+}

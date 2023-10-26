@@ -1,7 +1,7 @@
 import { AnimationComponent } from "../components/AnimationComponent";
 import MainPlayer from "./MainPlayer";
 
-import player_animation from "../../assets/animations/player/move_animation.json";
+import player_animation from "../../assets/animations/player/move_default_sword.json";
 import Point2D from "../../modules/Point2D";
 import CanvasManager from "../../managers/CanvasManager";
 import AssetsManager from "../../managers/AssetsManager";

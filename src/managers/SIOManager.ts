@@ -26,7 +26,7 @@ class SIOManager {
         loaded.onLoaded(() => this.checkPing());
 
         const serverUrls = {
-            replit: "https://testrpg.zanpy.repl.co",
+            replit: "rp-server.ezcodingf.repl.co/",
             render: "https://zom-backend.onrender.com/",
             local: "http://localhost:3000",
             network: "http://192.168.0.101:3030"
@@ -89,6 +89,7 @@ class SIOManager {
             });
 
             const updatePlayers = data.playersData as Array<Player>;
+            const updatedPlayersIds: Array<number> = [];
             // console.log(data)
 
             updatePlayers.map(updatePlayer => {
@@ -98,6 +99,7 @@ class SIOManager {
                     if (updatePlayer.id == player.id) {
                         createPlayer = false;
                         player.networkData(updatePlayer);
+                        updatedPlayersIds.push(player.id);
                     }
                 });
 
@@ -109,8 +111,17 @@ class SIOManager {
                     newPlayer.id = updatePlayer.id;
 
                     GameObjectsManager.players.push(newPlayer);
+
+                    updatedPlayersIds.push(newPlayer.id);
                 }
             });
+
+            GameObjectsManager.players.map(player => {
+                if (!updatedPlayersIds.includes(player.id)) {
+                    //disconnect
+                    GameObjectsManager.removePlayerById(player.id);
+                }
+            })
 
             const updateWorldObjects = data.worldObjectsData as Array<GameObject>;
             updateWorldObjects.map(updateWO => {

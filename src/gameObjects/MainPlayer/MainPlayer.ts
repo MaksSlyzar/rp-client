@@ -171,9 +171,9 @@ class MainPlayer extends GameObject {
 
         CanvasManager.ctx.fillStyle = "white";
 
-        this.animationComponent.setDrawPosition(drawPosition.x, drawPosition.y);
+        this.animationComponent.setDrawPosition(drawPosition.x - 16, drawPosition.y - 16);
 
-        this.animationComponent.setDrawSize(64, 64);
+        this.animationComponent.setDrawSize(96, 96);
 
         this.animationComponent.draw(dt);
 

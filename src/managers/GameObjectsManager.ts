@@ -45,6 +45,13 @@ class GameObjectsManager {
 
         return null;
     }
+
+    removePlayerById (id: number) {
+        for (let index = 0; index < this.players.length; index++) {
+            if (this.players[index].id == id)
+                this.players.splice(index, 1);
+        }
+    }
     
     start () {
         this.camera = new Camera();
